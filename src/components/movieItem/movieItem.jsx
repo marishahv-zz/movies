@@ -6,16 +6,27 @@ import Button from '../common/button';
 import { deleteContact, clearFilter } from '../../actions';
 import './movieItem.scss';
 
-const MovieItem = ({ movie: { id, title, posterPath }, onEditClick, onDeleteClick }) => (
-  <tr>
-    <td>{title}</td>
-    <td><img src={posterPath} className="img-thumbnail img_size" alt="" /></td>
-    <td>
-      <Link to={`/edit/${id}`} className="btn btn-primary" onClick={onEditClick}>Edit</Link>
-      <Button colorStyle="btn-secondary" onClick={onDeleteClick} name="Delete" />
-    </td>
-  </tr>
-);
+const MovieItem = ({
+  movie: {
+    id, title, genres, posterPath,
+  }, onEditClick, onDeleteClick,
+}) => {
+  const genresList = genres.map((genre, index, arr) => (<span className="small">{(index === arr.length - 1) ? genre : `${genre} & `}</span>));
+
+  return (
+    <tr>
+      <td><img src={posterPath} className="img-thumbnail img_size" alt="" /></td>
+      <td className="align-middle">
+        <p className="lead font-weight-bold">{title}</p>
+        { genresList }
+      </td>
+      <td className="align-middle">
+        <Link to={`/details/${id}`} className="btn btn-danger btn-lg" onClick={onEditClick}>Details</Link>
+        {/* <Button colorStyle="btn-secondary" onClick={onDeleteClick} name="Delete" /> */}
+      </td>
+    </tr>
+  );
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { movie: { id } } = ownProps;

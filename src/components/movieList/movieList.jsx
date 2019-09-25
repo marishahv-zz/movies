@@ -74,20 +74,25 @@ class MovieList extends React.Component {
       const obj = {
         id: movie.id,
         title: movie.title,
+        genres: movie.genres,
         posterPath: movie.poster_path,
       };
 
       return <MovieItem movie={obj} key={`${movie.id}${index}`} />;
-    })
+    });
 
     return (
+
       <React.Fragment>
-        {(movieList.length === 0) && <p className="mt-4">No results found :(</p>}
-        <table className="table mt-4">
-          <tbody>
-            {movieList}
-          </tbody>
-        </table>
+        {(movieList.length > 0)
+          && (
+          <table className="table mt-4">
+            <tbody>
+              {movieList}
+            </tbody>
+          </table>
+          )
+        }
       </React.Fragment>
     );
   }

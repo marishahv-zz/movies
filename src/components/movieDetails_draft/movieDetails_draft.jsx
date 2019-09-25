@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { addContact, editContact } from '../../actions';
 import Button from '../common/button';
 
-class MovieInfoPage extends React.Component {
+class MovieDetails_draft extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,9 +116,9 @@ const mapStateToProps = (state, ownProps) => {
   return {};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieInfoPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieDetails_draft));
 
-MovieInfoPage.propTypes = {
+MovieDetails_draft.propTypes = {
   title: PropTypes.string.isRequired,
   handleSaveClick: PropTypes.func.isRequired,
   contact: PropTypes.shape({
@@ -133,6 +133,6 @@ MovieInfoPage.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-MovieInfoPage.defaultProps = {
+MovieDetails_draft.defaultProps = {
   contact: null,
 };
