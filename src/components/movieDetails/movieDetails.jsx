@@ -17,8 +17,8 @@ const movieDetails = ({ posterPath, title, overview }) => (
   </div>
 );
 
-const mapDispatchToProps = dispatc => ({
-  onDetailsClick: () => dispatc(),
+const mapDispatchToProps = dispatch => ({
+  onDetailsClick: () => dispatch(),
 });
 
 export default connect(null, mapDispatchToProps)(movieDetails);
