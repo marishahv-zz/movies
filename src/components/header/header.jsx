@@ -10,7 +10,7 @@
 // export default Header;
 
 import React from 'react';
-import './header.scss';
+//import './header.scss';
 import Logo from '../common/logo/logo';
 import SearchForm from '../searchForm/searchForm';
 // import Filter from '../filter/filter';
@@ -30,7 +30,7 @@ import SearchForm from '../searchForm/searchForm';
 // }
 
 const header = () => (
-  <div className="header">
+  <div className="bg-red">
     <Logo />
     <SearchForm />
     {/*<div>*/}

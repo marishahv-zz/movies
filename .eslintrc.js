@@ -3,7 +3,7 @@ module.exports = {
   'rules': {
     'no-debugger': 'off',
     'react/no-deprecated': 'error',
-    'linebreak-style': ["error", "unix"],
+    'linebreak-style': ["error", "windows"],
   },
   'parser': 'babel-eslint',
   'plugins': [

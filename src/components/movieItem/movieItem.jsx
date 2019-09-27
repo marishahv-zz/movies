@@ -11,7 +11,7 @@ const MovieItem = ({
     id, title, genres, posterPath,
   }, onEditClick, onDeleteClick,
 }) => {
-  const genresList = genres.map((genre, index, arr) => (<span className="small">{(index === arr.length - 1) ? genre : `${genre} & `}</span>));
+  const genresList = genres.map((genre, index, arr) => (<span key={index} className="small">{(index === arr.length - 1) ? genre : `${genre} & `}</span>));
 
   return (
     <tr>

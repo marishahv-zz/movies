@@ -5,6 +5,7 @@ import Header from './header/header';
 import MovieList from './movieList/movieList';
 import MovieDetails from './movieDetails/movieDetails';
 import Page404 from './errorPage/404';
+import './app.scss';
 
 const App = () => (
   <div className="container">
